@@ -16,12 +16,16 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
+    <?php wp_head(); ?>
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
 
 </head>
 
-<body id="page-top">
+<body id="page-top" <?php body_class(); ?>>
 
+    <?php
+    wp_body_open();
+    ?>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -33,11 +37,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                    
                     <?php
                     $args = array(
                         'post_type' => 'page',
-                        'post_status' => 'publish',
-                        'order' => 'ASC'
+                        'post_status' => 'publish'
                     );
                     $query = new WP_Query($args);
                     while ($query->have_posts()) {
@@ -51,6 +55,7 @@
                     }
                     wp_reset_postdata();
                     ?>
+
                 </ul>
             </div>
         </div>

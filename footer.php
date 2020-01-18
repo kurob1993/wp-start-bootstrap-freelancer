@@ -66,6 +66,7 @@
 <!-- Custom scripts for this template -->
 <script src="<?php bloginfo('template_url'); ?>/js/freelancer.min.js"></script>
 
+<?php wp_footer(); ?>
 </body>
 
 </html>

@@ -14,12 +14,12 @@ while ($query->have_posts()) {
 
   <?php if ($i % 2) {
   ?>
-    <section class="page-section bg-primary text-white mb-0" id="about">
+    <section class="page-section bg-primary text-white mb-0" id="<?php echo strtolower(get_the_title()); ?>">
 
     <?php
   } else {
     ?>
-      <section class="page-section portfolio" id="portfolio">
+      <section class="page-section portfolio" id="<?php echo strtolower(get_the_title()); ?>">
       <?php
     } ?>
       <div class="container">
