@@ -3,8 +3,7 @@
 <?php
 $args = array(
   'post_type' => 'page',
-  'post_status' => 'publish',
-  'order' => 'ASC'
+  'post_status' => 'publish'
 );
 $query = new WP_Query($args);
 $i = 0;
@@ -12,16 +11,12 @@ while ($query->have_posts()) {
   $query->the_post();
 ?>
 
-  <?php if ($i % 2) {
-  ?>
-    <section class="page-section bg-primary text-white mb-0" id="<?php echo strtolower(get_the_title()); ?>">
+      <?php if ($i % 2) { ?>
+        <section class="page-section bg-primary text-white mb-0" id="<?php echo strtolower(get_the_title()); ?>">
+      <?php } else { ?>
+          <section class="page-section mb-0" id="<?php echo strtolower(get_the_title()); ?>">
+      <?php } ?>
 
-    <?php
-  } else {
-    ?>
-      <section class="page-section portfolio" id="<?php echo strtolower(get_the_title()); ?>">
-      <?php
-    } ?>
       <div class="container">
 
         <!-- Portfolio Section Heading -->
@@ -38,7 +33,9 @@ while ($query->have_posts()) {
 
         <!-- Portfolio Grid Items -->
         <div class="row">
-          <?php the_content(); ?>
+          <div class="mx-auto">
+            <?php the_content(); ?>
+          </div>
         </div>
         <!-- /.row -->
 

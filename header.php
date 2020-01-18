@@ -67,7 +67,7 @@
         <div class="container d-flex align-items-center flex-column">
 
             <!-- Masthead Avatar Image -->
-            <img class="masthead-avatar mb-5" src="<?php bloginfo('template_url'); ?>/img/avataaars.svg" alt="">
+            <img class="masthead-avatar mb-5 rounded-circle img-thumbnail" src="<?php echo get_option('themename_theme_options')['image_upload']; ?>" alt="">
 
             <!-- Masthead Heading -->
             <h1 class="masthead-heading text-uppercase mb-0"><?php bloginfo('description'); ?></h1>
@@ -82,7 +82,9 @@
             </div>
 
             <!-- Masthead Subheading -->
-            <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+            <p class="masthead-subheading font-weight-light mb-0">
+                <?php echo get_option('my_skils')?>
+            </p>
 
         </div>
     </header>
