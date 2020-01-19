@@ -1,4 +1,9 @@
 <?php
+function mytheme_add_section( $wp_customize ) {
+    $wp_customize->add_section('footers', array('title' => 'Footers'));
+ }
+ add_action( 'customize_register', 'mytheme_add_section' );
+
 
 function my_register_additional_customizer_settings( $wp_customize ) {
     $wp_customize->add_setting(
@@ -14,7 +19,7 @@ function my_register_additional_customizer_settings( $wp_customize ) {
         $wp_customize,
         'my_skils',
         array(
-            'label'      => __( 'Skils', 'textdomain' ),
+            'label'      => __( 'Skills', 'textdomain' ),
             'settings'   => 'my_skils',
             'priority'   => 10,
             'section'    => 'title_tagline',
