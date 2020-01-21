@@ -67,7 +67,17 @@
         <div class="container d-flex align-items-center flex-column">
 
             <!-- Masthead Avatar Image -->
-            <img class="masthead-avatar mb-5 rounded-circle img-thumbnail" src="<?php echo get_option('themename_theme_options')['image_upload']; ?>" alt="">
+            <?php 
+                if (get_option('themename_theme_options')) {
+            ?>
+                <img class="masthead-avatar mb-5 rounded-circle img-thumbnail" src="<?php echo get_option('themename_theme_options')['image_upload']; ?>" alt="">
+            <?php 
+                }else{
+            ?>
+                <img class="masthead-avatar mb-5" src="<?php bloginfo('template_url'); ?>/img/avataaars.svg" alt="">
+            <?php 
+                }
+            ?>
 
             <!-- Masthead Heading -->
             <h1 class="masthead-heading text-uppercase mb-0"><?php bloginfo('description'); ?></h1>

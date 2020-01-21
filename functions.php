@@ -12,7 +12,7 @@ function my_register_additional_customizer_settings( $wp_customize ) {
             'default' => '',
             'type' => 'option', // you can also use 'theme_mod'
             'capability' => 'edit_theme_options'
-        ),
+        )
     );
 
     $wp_customize->add_control( new WP_Customize_Control(
