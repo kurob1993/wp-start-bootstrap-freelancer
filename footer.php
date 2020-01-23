@@ -6,23 +6,36 @@
             <!-- Footer Location -->
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Location</h4>
-                <p class="lead mb-0">2215 John Daniel Drive
-                    <br>Clark, MO 65243</p>
+
+                <p class="lead mb-0">
+                    <?php echo get_option('location')?>
+                </p>
             </div>
 
             <!-- Footer Social Icons -->
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Around the Web</h4>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
+                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo get_option('facebook')?>" target="_blank">
                     <i class="fab fa-fw fa-facebook-f"></i>
                 </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
+                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo get_option('twitter')?>" target="_blank">
                     <i class="fab fa-fw fa-twitter"></i>
                 </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
+                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo get_option('linkedin')?>" target="_blank">
                     <i class="fab fa-fw fa-linkedin-in"></i>
                 </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
+                <style>
+                    .blink_me {
+                        animation: blinker 1s linear infinite;
+                    }
+
+                    @keyframes blinker {
+                        50% {
+                            opacity: 0;
+                        }
+                    }
+                </style>
+                <a class="btn btn-outline-light btn-social mx-1 blink_me" href="<?php echo get_option('link')?>" target="_blank">
                     <i class="fab fa-fw fa-dribbble"></i>
                 </a>
             </div>
@@ -30,8 +43,7 @@
             <!-- Footer About Text -->
             <div class="col-lg-4">
                 <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                <p class="lead mb-0">Freelance is a free to use, MIT licensed Bootstrap theme created by
-                    <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                <p class="lead mb-0"><?php echo get_option('about')?></p>
             </div>
 
         </div>
@@ -41,7 +53,7 @@
 <!-- Copyright Section -->
 <section class="copyright py-4 text-center text-white">
     <div class="container">
-        <small>Copyright &copy; Your Website 2019</small>
+        <small><?php echo get_option('copyright')?></small>
     </div>
 </section>
 

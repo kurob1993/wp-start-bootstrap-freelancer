@@ -65,7 +65,6 @@
     <!-- Masthead -->
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
-
             <!-- Masthead Avatar Image -->
             <?php 
                 if (get_option('themename_theme_options')) {
@@ -95,6 +94,5 @@
             <p class="masthead-subheading font-weight-light mb-0">
                 <?php echo get_option('my_skils')?>
             </p>
-
         </div>
     </header>
