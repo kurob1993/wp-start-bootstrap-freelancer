@@ -41,7 +41,8 @@
                     <?php
                     $args = array(
                         'post_type' => 'page',
-                        'post_status' => 'publish'
+                        'post_status' => 'publish',
+                        'order' => 'asc'
                     );
                     $query = new WP_Query($args);
                     while ($query->have_posts()) {
